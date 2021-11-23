@@ -8,4 +8,15 @@
 
 body {
     text-transform: uppercase;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

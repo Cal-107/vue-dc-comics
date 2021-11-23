@@ -1,21 +1,24 @@
 <template>
-    <header class="header-section">
-        <!-- Logo -->
-        <a href="/">
-             <img src="../assets/dc-logo.png" alt="Logo DC Comics">
-        </a>
-        <!-- Start Nav with Link -->
-        <nav>
-            <ul>
-                <li v-for="(link, index) in linkNav" :key="`link-${index}`"
-                    :class="{active: link.activeLink}"
-                >
-                    <a :href="link.url">
-                        {{ link.text }}
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <header>
+        <section class="header-section container">
+            <!-- Logo -->
+            <a href="/">
+                 <img src="../assets/dc-logo.png" alt="Logo DC Comics">
+            </a>
+            <!-- Start Nav with Link -->
+            <nav>
+                <ul>
+                    <li v-for="(link, index) in linkNav" :key="`link-${index}`"
+                        :class="{active: link.activeLink}"
+                        @click="setActiveClick(index)"
+                    >
+                        <a :href="link.url">
+                            {{ link.text }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
     </header>
 </template>
 
@@ -77,6 +80,19 @@ export default {
                 },
             ]
         }
+    },
+    methods: {
+        setActiveClick(index) {
+            this.linkNav.forEach((el) => {
+                el.activeLink = false
+            })
+
+            if (!this.linkNav[index].activeLink){
+                this.linkNav[index].activeLink = true
+            }else {
+                this.linkNav[index].activeLink = false
+            }
+        }
     }
 }
 </script>
@@ -87,21 +103,23 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 0.5rem;
-        height: 150px;
-
+        a {
+            img {
+                width: 80px;
+            }
+        }
          nav {
-             height: 100%;
              ul {
                  list-style: none;
                  display: flex;
-                 height: 100%;
+                 
 
                  li {
-                     height: 100%;
+                     
                      display: flex;
                      margin: 0 .80rem;
                      border-bottom: 5px solid transparent;
+                     transition: .5s border-bottom-color ease-out;
                         &.active,
                         &:hover {
                             border-bottom-color: #0282f9;
@@ -110,7 +128,7 @@ export default {
                         a {
                            text-decoration: none;
                            margin: 3rem 0;
-                           font-size: 0.8rem;
+                           font-size: 0.7rem;
                        }
                     }
                 }        
