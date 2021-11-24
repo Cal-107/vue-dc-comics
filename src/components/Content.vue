@@ -1,14 +1,38 @@
 <template>
   <section class="content-container">
       <div class="container">
-        --> Content goes here
+           <div class="boxes">
+                <span class="title-section">Current series</span>
+                <ul>
+                    <li v-for="(item, index) in List" :key="`item-${index}`">
+                        <div class="card">
+                            <img :src="item.thumb" alt="">
+                        </div>
+                        <div class="text-card"> {{ item.series }}</div>
+                    </li>
+                </ul>
+                <div class="button-box-2">
+                  <button>
+                      <a href="/">
+                        Load more
+                      </a>
+                  </button>
+                </div>
+           </div>
       </div>
   </section>
 </template>
 
 <script>
+import ItemsDcComics from '@/data/prodItems.js'
+
 export default {
     name: 'Content',
+    data() {
+        return {
+            List: ItemsDcComics,
+        }
+    }
 }
 </script>
 
@@ -21,8 +45,62 @@ export default {
         color: #fff;
         background-color: #1c1c1c;
         height: 100%;
+        position: relative;
         .container {
             width: 100%;
+            .boxes {
+                .title-section {
+                    position: absolute;
+                    background-color: #0282f9;
+                    padding: 0.5rem 1.1rem;
+                    font-size: 1.5rem;
+                    top: -20px;
+                }
+                display: flex;
+                flex-direction: column;
+                padding-top: 3rem;
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        width: calc( 100% / 6) ;
+                        list-style: none;
+                        padding: 1rem;
+                        .card {
+                            height: 155px;
+                            img {
+                                object-fit: cover;
+                                object-position: top;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .text-card {
+                            color: #fff;
+                            font-size: 0.75rem;
+                            margin-top: 1rem;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+            .button-box-2 {
+                align-self: center;
+                padding: 1.5rem 0 1rem;
+                button {
+                    background-color: #0282f9;
+                    border: none;
+                    padding: 0.5rem 2.5rem;
+                    font-size: 0.6rem;
+                    a {
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
         }
     }
 

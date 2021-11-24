@@ -52,20 +52,10 @@
           <div class="social-box">
             <span>Follow us</span>
             <ul class="list-2">
-              <li>
-                <img src="@/assets/footer-facebook.png" alt="">
-              </li>
-              <li>
-                <img src="@/assets/footer-twitter.png" alt="">
-              </li>
-              <li>
-                <img src="@/assets/footer-youtube.png" alt="">
-              </li>
-              <li>
-                <img src="@/assets/footer-pinterest.png" alt="">
-              </li>
-              <li>
-                <img src="@/assets/footer-periscope.png" alt="">
+              <li v-for="(social, i) in socialList" :key="`list-${i}`">
+                <a href="/">
+                  <img :src="social.image" :alt="social.text">
+                </a>
               </li>
             </ul>
           </div>
@@ -187,6 +177,33 @@ export default {
             url: '/',
             text: 'dc power visa'
           }
+        ],
+        socialList: [
+          {
+            text: 'Facebook',
+            url: '/',
+            image: require('@/assets/footer-facebook.png')
+          },
+          {
+            text: 'Twitter',
+            url: '/',
+            image: require('@/assets/footer-twitter.png')
+          },
+          {
+            text: 'Periscope',
+            url: '/',
+            image: require('@/assets/footer-periscope.png')
+          },
+          {
+            text: 'Pinterest',
+            url: '/',
+            image: require('@/assets/footer-pinterest.png')
+          },
+          {
+            text: 'You-Tube',
+            url: '/',
+            image: require('@/assets/footer-youtube.png')
+          }
         ]
       }
     }
@@ -214,7 +231,7 @@ export default {
             background-repeat: no-repeat;
             background-position-y: center;
             height: 500px;
-            width: 48%;
+            width: 50%;
           }
           .list {
             display: flex;
