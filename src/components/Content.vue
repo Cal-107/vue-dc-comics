@@ -64,6 +64,8 @@ export default {
                         width: calc( 100% / 6) ;
                         list-style: none;
                         padding: 1rem;
+                        transition: .3s transform ease;
+                        cursor: pointer;
                         // .card-img {
                         //     height: 155px;
                         //     img {
@@ -79,6 +81,9 @@ export default {
                         //     margin-top: 1rem;
                         //     font-weight: 300;
                         // }
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
@@ -90,12 +95,20 @@ export default {
                     border: none;
                     padding: 0.5rem 2.5rem;
                     font-size: 0.6rem;
+                    transition: .5s background ease;
+                    &:hover {
+                        background-color: #fff;
+                    }
+                    &:hover a {
+                        color: #0282f9;
+                    }
                     a {
                         text-transform: uppercase;
                         font-weight: 600;
                         letter-spacing: 2px;
                         color: #fff;
                         text-decoration: none;
+                        transition: .5s color ease;
                     }
                 }
             }

@@ -73,109 +73,109 @@ export default {
         DcComicsList: [
           {
             url: '/',
-            text: 'characters'
+            text: 'Characters'
           },
           {
             url: '/',
-            text: 'comics'
+            text: 'Comics'
           },
           {
             url: '/',
-            text: 'movies'
+            text: 'Movies'
           },
           {
             url: '/',
-            text: 'tv'
+            text: 'Tv'
           },
           {
             url: '/',
-            text: 'games'
+            text: 'Games'
           },
           {
             url: '/',
-            text: 'videos'
+            text: 'Videos'
           },
           {
             url: '/',
-            text: 'news'
+            text: 'News'
           }
         ],
         shopList: [
           {
             url: '/',
-            text: 'shop dc'
+            text: 'Shop DC'
           },
           {
             url: '/',
-            text: 'shop dc collectibles'
+            text: 'Shop DC Collectibles'
           }
         ],
         dcList: [
           {
             url: '/',
-            text: 'term of use'
+            text: 'Term of Use'
           },
           {
             url: '/',
-            text: 'Privacy policy (new)'
+            text: 'Privacy policy (New)'
           },
           {
             url: '/',
-            text: 'ad choises'
+            text: 'Ad Choises'
           },
           {
             url: '/',
-            text: 'advertising'
+            text: 'Advertising'
           },
           {
             url: '/',
-            text: 'jobs'
+            text: 'Jobs'
           },
           {
             url: '/',
-            text: 'subscriptions'
+            text: 'Subscriptions'
           },
           {
             url: '/',
-            text: 'talent workshops'
+            text: 'Talent Workshops'
           },
           {
             url: '/',
-            text: 'cpsc certificates'
+            text: 'CPSC Certificates'
           },
           {
             url: '/',
-            text: 'ratings'
+            text: 'Ratings'
           },
           {
             url: '/',
-            text: 'shop help'
+            text: 'Shop help'
           },
           {
             url: '/',
-            text: 'contact us'
+            text: 'Contact Us'
           },
         ],
         sitesList: [
           {
             url: '/',
-            text: 'dc'
+            text: 'DC'
           },
           {
             url: '/',
-            text: 'Mad megazine'
+            text: 'MAD Magazine'
           },
           {
             url: '/',
-            text: 'dc kids'
+            text: 'DC kids'
           },
           {
             url: '/',
-            text: 'dc universe'
+            text: 'DC universe'
           },
           {
             url: '/',
-            text: 'dc power visa'
+            text: 'DC Power Visa'
           }
         ],
         socialList: [
@@ -249,14 +249,16 @@ export default {
 
             li {
               list-style: none;
-              font-weight: 400;
+              font-weight: 300;
               margin: 0.1rem 0;
-              text-transform: lowercase;
-              text-transform: capitalize;
+              text-transform: none;
               a {
                 font-size: 0.80rem;
                 color: rgb(205, 205, 205);
                 text-decoration: none;
+                &:hover {
+                  color: #0282f9;
+                }
               }
             }
           }
@@ -279,6 +281,12 @@ export default {
            color: #fff;
            text-transform: uppercase;
            cursor: pointer;
+           transition: .5s border ease,
+                       .5s color ease;
+           &:hover {
+             border-color: #fff;
+             color: #0282f9;
+           }
          }
        }
        .social-box {

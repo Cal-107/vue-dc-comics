@@ -7,6 +7,7 @@
     <main>
       <Hero />
       <Content />
+      <BannerShop />
     </main>
 
     <!-- Start Footer -->
@@ -19,6 +20,7 @@ import Header from '@/components/Header.vue';
 import Content from '@/components/Content.vue';
 import Hero from '@/components/Hero.vue';
 import Footer from '@/components/Footer.vue';
+import BannerShop from '@/components/BannerShop.vue';
 
 export default {
   name: 'App',
@@ -26,6 +28,7 @@ export default {
     Header,
     Hero,
     Content,
+    BannerShop,
     Footer,
   }
 }
